@@ -199,7 +199,7 @@ function SignUp() {
 
       <section className="flex w-full bg-[#F7FBFF] p-4">
         <img
-          src="/login.png"
+          src="img/login.png"
           alt="Login illustration"
           className="h-full w-[85%] rounded-[5rem] py-2"
         />

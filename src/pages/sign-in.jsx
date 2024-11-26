@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function SignIn() {
+  const { t } = useTranslation();
+
   return (
     <article className="grid min-h-screen grid-cols-1 pl-36 lg:grid-cols-[40%_60%]">
       <section className="h-full flex-col items-center justify-center lg:flex">
         <div className="h-full flex-col justify-center px-2 py-8 lg:flex">
           <header className="mb-4">
             <h1 className="mb-2 text-xl font-semibold text-[#0C1421] md:text-2xl lg:text-3xl">
-              Welcome Back
+              {t("welcomeMsg")}
             </h1>
             <p className="text-sm font-normal text-[#313957] md:text-base lg:text-sm">
               Today is a new day. It&apos;s your day.
@@ -185,7 +188,7 @@ function SignIn() {
 
       <section className="flex w-full bg-[#F7FBFF] p-4">
         <img
-          src="/login.png"
+          src="img/login.png"
           alt="Login illustration"
           className="h-full w-[85%] rounded-[5rem] py-2"
         />
