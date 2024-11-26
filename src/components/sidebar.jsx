@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const menuItems = [
   {
@@ -46,8 +46,10 @@ const menuItems = [
 ];
 
 function Sidebar() {
+  const { pathname } = useLocation();
+
   return (
-    <section className="fixed flex h-screen w-[16.975rem] flex-col items-center border border-[#4D44B5] bg-[#4D44B5] pt-8">
+    <section className="fixed flex h-screen w-[16.975rem] flex-col items-center border border-r-0 border-[#4D44B5] bg-[#4D44B5] pt-8">
       <Link
         to="/"
         className="flex h-[2.88656rem] items-center justify-center gap-2"
@@ -63,10 +65,10 @@ function Sidebar() {
           <Link
             to={menu.path}
             key={menu.id}
-            className="flex items-center gap-6 px-6 py-2"
+            className={`flex items-center gap-6 rounded-s-[2.5rem] px-6 py-2 text-lg font-medium text-[#C1BBEB] hover:bg-[#F3F4FF] hover:text-[#4D44B5] ${pathname === menu.path ? "bg-[#F3F4FF] text-[#4D44B5]" : ""}`}
           >
             <img src={menu.icon} alt={menu.name} />
-            <h2 className="text-lg font-medium text-[#C1BBEB]">{menu.name}</h2>
+            <h2 className="">{menu.name}</h2>
           </Link>
         ))}
       </nav>
