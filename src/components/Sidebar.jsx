@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 const menuItems = [
   {
     id: 1,
-    name: "Dashboard",
+    name: "Overview",
     activeIcon: "/img/sidebar/dashboard-active.svg",
     inactiveIcon: "/img/sidebar/dashboard.svg",
     path: "/",

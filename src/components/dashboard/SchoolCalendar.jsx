@@ -47,7 +47,6 @@ const EVENT_TYPES = {
 const SchoolCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [events, setEvents] = useState({});
-  const [selectedEventType, setSelectedEventType] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -110,7 +109,7 @@ const SchoolCalendar = () => {
           <span
             className={cn(
               "absolute left-1 top-1 text-sm",
-              isSunday && "text-destructive font-medium",
+              isSunday && "font-medium text-destructive",
             )}
           >
             {i}
@@ -132,7 +131,7 @@ const SchoolCalendar = () => {
 
   return (
     <div
-      className="bg-card text-card-foreground rounded-lg border p-4 shadow-sm md:p-6"
+      className="rounded-lg border bg-card p-4 text-card-foreground shadow-sm md:p-6"
       role="region"
       aria-label="School Calendar"
     >
@@ -222,7 +221,7 @@ const SchoolCalendar = () => {
           <div
             key={day}
             className={cn(
-              "text-muted-foreground text-center text-sm font-medium",
+              "text-center text-sm font-medium text-muted-foreground",
               index === 0 && "text-destructive",
             )}
           >
@@ -256,7 +255,7 @@ const SchoolCalendar = () => {
         {Object.entries(EVENT_TYPES).map(([type, { name, dotColor }]) => (
           <div key={type} className="flex items-center gap-2">
             <div className={cn("h-4 w-4 rounded", dotColor)} />
-            <span className="text-muted-foreground text-sm">{name}</span>
+            <span className="text-sm text-muted-foreground">{name}</span>
           </div>
         ))}
       </div>

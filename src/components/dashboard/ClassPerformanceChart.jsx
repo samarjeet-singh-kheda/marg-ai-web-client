@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import {
   BarChart,
   Bar,
-  XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,

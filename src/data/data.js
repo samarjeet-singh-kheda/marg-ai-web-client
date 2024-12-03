@@ -147,6 +147,16 @@ export const documents = [
     title: "Class E study material science",
     date: "01 Oct, 08:20AM",
   },
+  {
+    id: 4,
+    title: "Class A 1st semester report",
+    date: "04 May, 09:20AM",
+  },
+  {
+    id: 5,
+    title: "Class A 1st semester report",
+    date: "04 May, 09:20AM",
+  },
 ];
 
 export const tests = [
@@ -172,6 +182,20 @@ export const tests = [
     message: "Please schedule your class test.",
     time: "04:30 pm",
     class: 6,
+    classLogo: "/images/math-logo.png",
+  },
+  {
+    id: 4,
+    title: "Class A 1st semester report",
+    time: "09:20AM",
+    class: 12,
+    classLogo: "/images/math-logo.png",
+  },
+  {
+    id: 5,
+    title: "Class A 1st semester report",
+    time: "09:20AM",
+    class: 12,
     classLogo: "/images/math-logo.png",
   },
 ];

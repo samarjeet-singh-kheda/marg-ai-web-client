@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import LanguageSelector from "@/components/LanguageSelector";
 import TeacherAvatar from "./TeacherAvatar";
 
