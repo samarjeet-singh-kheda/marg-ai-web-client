@@ -4,7 +4,7 @@ function NotFoundPage() {
       <h1 className="text-9xl font-bold text-[#4D44B5]">404</h1>
       <h2 className="text-2xl font-semibold text-[#303972]">Page Not Found</h2>
       <p className="text-[#A098AE]">
-        The page you're looking for doesn't exist.
+        The page you&apos;re looking for doesn&apos;t exist.
       </p>
       <a
         href="/"

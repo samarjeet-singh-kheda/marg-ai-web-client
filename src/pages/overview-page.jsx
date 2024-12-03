@@ -1,9 +1,9 @@
 import Sidebar from "@/components/Sidebar";
-import ClassPerformanceChart from "@/components/dashboard/ClassPerformanceChart";
-import Banner from "@/components/dashboard/Banner";
+import ClassPerformanceChart from "@/components/overview/ClassPerformanceChart";
+import Banner from "@/components/overview/Banner";
 import Header from "@/components/Header";
-import TopPerformingStudentsCard from "@/components/dashboard/TopPerformingStudentsCard";
-import SchoolCalendar from "@/components/dashboard/SchoolCalendar";
+import TopPerformingStudentsCard from "@/components/overview/TopPerformingStudentsCard";
+import SchoolCalendar from "@/components/overview/SchoolCalendar";
 import {
   classData,
   topStudents,
@@ -12,10 +12,10 @@ import {
   tests,
   classProgress,
 } from "@/data/data";
-import RecentStudentsCard from "@/components/dashboard/RecentStudentsCard";
-import DocumentListCard from "@/components/dashboard/DocumentListCard";
-import TestListCard from "@/components/dashboard/TestListCard";
-import StudentProgressCard from "@/components/dashboard/StudentProgressCard";
+import RecentStudentsCard from "@/components/overview/RecentStudentsCard";
+import DocumentListCard from "@/components/overview/DocumentListCard";
+import TestListCard from "@/components/overview/TestListCard";
+import StudentProgressCard from "@/components/overview/StudentProgressCard";
 
 function HomePage() {
   return (
