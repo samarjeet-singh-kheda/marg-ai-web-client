@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { ScrollArea } from "../ui/scroll-area";
 
-function StudentProgressCard({ classProgress }) {
+function ClassProgressCard({ classProgress }) {
   return (
-    <div className="w-full rounded-2xl bg-white p-6 shadow-sm">
+    <div className="max-h-[535px] w-full rounded-3xl border bg-card p-6 shadow-sm">
       <h2 className="mb-6 text-xl font-semibold text-[#2E3A59]">
         Class Progress
       </h2>
-      <div className="max-h-[400px] overflow-y-auto pr-2">
+      <ScrollArea className="h-[425px] pr-2">
+        {/* <div className="overflow-y-auto pr-2"> */}
         <div className="grid grid-cols-2 gap-6">
           {classProgress.map((item) => (
             <div key={item.class} className="text-center">
@@ -30,9 +32,10 @@ function StudentProgressCard({ classProgress }) {
             </div>
           ))}
         </div>
-      </div>
+        {/* </div> */}
+      </ScrollArea>
     </div>
   );
 }
 
-export default StudentProgressCard;
+export default ClassProgressCard;

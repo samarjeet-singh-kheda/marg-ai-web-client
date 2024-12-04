@@ -5,22 +5,22 @@ function DocumentListCard({ documents }) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const handleViewMore = () => {
-    setVisibleCount((prevCount) => prevCount + 5);
+    setVisibleCount((prevCount) => (prevCount <= 3 ? 5 : 3));
   };
 
   return (
-    <div className="w-full rounded-3xl bg-white p-6 shadow-sm">
+    <div className="w-full rounded-3xl border bg-card p-6 shadow-sm">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-xl font-semibold text-[#333]">Documents</h2>
         <button
           onClick={handleViewMore}
           className="text-sm font-bold text-[#4D44B5] hover:text-[#4D44B5]/80"
         >
-          See All
+          {visibleCount <= 3 ? "See All" : "See Less"}
         </button>
       </div>
 
-      <ul className="flex flex-col gap-8">
+      <ul className="flex flex-col gap-4">
         {documents.slice(0, visibleCount).map((doc) => (
           <DocumentItem doc={doc} key={doc.id} />
         ))}
@@ -30,8 +30,21 @@ function DocumentListCard({ documents }) {
 }
 
 function DocumentItem({ doc }) {
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date
+      .toLocaleString("en-US", {
+        day: "2-digit",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .replace(",", "");
+  };
+
   return (
-    <li key={doc.id} className="flex items-center gap-8">
+    <li className="flex items-center gap-8 rounded-lg bg-white/50 p-3 shadow-sm transition-all hover:bg-white hover:shadow-md">
       <div className="rounded-lg bg-[#F3F4FF] p-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +68,7 @@ function DocumentItem({ doc }) {
 
       <div>
         <h3 className="mb-1 font-normal text-gray-800">{doc.title}</h3>
-        <p className="text-sm text-gray-500">{doc.date}</p>
+        <p className="text-sm text-gray-500">{formatDate(doc.date)}</p>
       </div>
     </li>
   );

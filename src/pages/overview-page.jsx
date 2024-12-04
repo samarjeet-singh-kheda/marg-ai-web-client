@@ -3,7 +3,7 @@ import ClassPerformanceChart from "@/components/overview/ClassPerformanceChart";
 import Banner from "@/components/overview/Banner";
 import Header from "@/components/Header";
 import TopPerformingStudentsCard from "@/components/overview/TopPerformingStudentsCard";
-import SchoolCalendar from "@/components/overview/SchoolCalendar";
+import SchoolCalendar from "@/components/SchoolCalendar";
 import {
   classData,
   topStudents,
@@ -15,7 +15,7 @@ import {
 import RecentStudentsCard from "@/components/overview/RecentStudentsCard";
 import DocumentListCard from "@/components/overview/DocumentListCard";
 import TestListCard from "@/components/overview/TestListCard";
-import StudentProgressCard from "@/components/overview/StudentProgressCard";
+import ClassProgressCard from "@/components/overview/ClassProgressCard";
 
 function HomePage() {
   return (
@@ -53,7 +53,7 @@ function HomePage() {
             <ClassPerformanceChart data={classData} />
 
             {/* Student Progress */}
-            <StudentProgressCard classProgress={classProgress} />
+            <ClassProgressCard classProgress={classProgress} />
 
             {/* Top Performing */}
             <TopPerformingStudentsCard students={topStudents} />

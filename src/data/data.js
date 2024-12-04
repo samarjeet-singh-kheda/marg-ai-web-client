@@ -135,27 +135,27 @@ export const documents = [
   {
     id: 1,
     title: "Class A 1st semester report",
-    date: "04 May, 09:20AM",
+    date: "2024-06-04T09:20",
   },
   {
     id: 2,
     title: "Kelvin leave application",
-    date: "01 Aug, 04:20PM",
+    date: "2024-08-01T16:30",
   },
   {
     id: 3,
     title: "Class E study material science",
-    date: "01 Oct, 08:20AM",
+    date: "2023-10-01T08:30",
   },
   {
     id: 4,
     title: "Class A 1st semester report",
-    date: "04 May, 09:20AM",
+    date: "2024-05-04T09:20",
   },
   {
     id: 5,
-    title: "Class A 1st semester report",
-    date: "04 May, 09:20AM",
+    title: "Class F 3rd semester report",
+    date: "2024-05-04T12:20",
   },
 ];
 
@@ -166,7 +166,6 @@ export const tests = [
     message: "Hello, Mr John i am yet to get your class b res...",
     time: "10:25 am",
     class: 12,
-    classLogo: "/images/math-logo.png",
   },
   {
     id: 2,
@@ -174,7 +173,6 @@ export const tests = [
     message: "Please schedule your class test.",
     time: "12:35 pm",
     class: 7,
-    classLogo: "/images/math-logo.png",
   },
   {
     id: 3,
@@ -182,21 +180,18 @@ export const tests = [
     message: "Please schedule your class test.",
     time: "04:30 pm",
     class: 6,
-    classLogo: "/images/math-logo.png",
   },
   {
     id: 4,
     title: "Class A 1st semester report",
     time: "09:20AM",
     class: 12,
-    classLogo: "/images/math-logo.png",
   },
   {
     id: 5,
     title: "Class A 1st semester report",
     time: "09:20AM",
     class: 12,
-    classLogo: "/images/math-logo.png",
   },
 ];
 
@@ -236,5 +231,78 @@ export const classProgress = [
     completed: 18,
     total: 22,
     completionRate: 82,
+  },
+];
+
+export const events = [
+  {
+    id: 1,
+    title: "Quadratic",
+    class: "Class 8th A",
+    time: "7:00 AM - 8:00 AM",
+    date: "2024-12-04",
+  },
+  {
+    id: 2,
+    title: "Maths",
+    class: "Class 8th A",
+    time: "10:00 AM - 11:00 AM",
+    date: "2024-12-04",
+  },
+  {
+    id: 3,
+    title: "Algebra",
+    class: "Class 8th A",
+    time: "11:00 AM - 12:00 PM",
+    date: "2024-12-04",
+  },
+  {
+    id: 4,
+    title: "Maths",
+    class: "Class 8th A",
+    time: "11:00 AM - 12:00 PM",
+    date: "2024-12-05",
+  },
+  {
+    id: 5,
+    title: "English",
+    class: "Class 8th A",
+    time: "1:00 PM - 2:30 PM",
+    date: "2024-12-04",
+  },
+];
+
+export const upcomingActivities = [
+  {
+    id: 1,
+    title: "Meeting with the VC",
+    meetingLink: "Meeting link//www.zoom.com",
+    date: "2024-12-31",
+    startTime: "10:00 AM",
+    endTime: "11:00 AM",
+  },
+  {
+    id: 2,
+    title: "Meeting with John",
+    meetingLink: "Meeting link//www.zoom.com",
+    date: "2024-12-04",
+    startTime: "10:00 AM",
+    endTime: "11:00 AM",
+  },
+  {
+    id: 3,
+    title: "Meeting with the VC",
+    meetingLink: "Meeting link//www.zoom.com",
+    date: "2024-12-31",
+    startTime: "10:00 AM",
+    endTime: "11:00 AM",
+  },
+  {
+    id: 4,
+    title: "Meeting with the VC",
+    meetingLink: "Meeting link//www.zoom.com",
+    date: "2024-12-05",
+    startTime: "1:00 PM",
+    endTime: "2:30 PM",
   },
 ];

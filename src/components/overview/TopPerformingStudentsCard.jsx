@@ -9,7 +9,7 @@ function TopPerformingStudentsCard({ students }) {
   };
 
   return (
-    <div className="flex w-full flex-col rounded-2xl bg-white p-6 pb-0 shadow-sm">
+    <div className="flex w-full flex-col rounded-3xl border bg-card p-6 pb-0 shadow-md">
       <h2 className="mb-6 text-xl font-semibold text-[#2E3A59]">
         Top Performing Students
       </h2>
@@ -71,8 +71,7 @@ function TopPerformingStudent({ student, idx }) {
 
   return (
     <li
-      key={student.name}
-      className={`align-start relative flex flex-col items-start rounded-[1.25rem] px-4 py-2 ${bgClass}`}
+      className={`align-start relative flex flex-col items-start rounded-[1.25rem] px-4 py-2 shadow-sm transition-all hover:shadow-md ${bgClass}`}
     >
       <h3 className={`text-lg font-bold ${nameFontClass}`}>{student.name}</h3>
       <p className={`text-[0.675rem] font-bold uppercase ${scoreFontClass}`}>

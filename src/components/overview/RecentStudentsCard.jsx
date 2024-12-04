@@ -31,15 +31,21 @@ function RecentStudentsCard({ recentStudents }) {
             className="mb-4 flex items-center justify-between gap-2"
           >
             <div className="flex items-center gap-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-              >
-                <rect width="48" height="48" rx="24" fill="#C1BBEB" />
-              </svg>
+              {student.img ? (
+                <div className="h-12 w-12 overflow-hidden rounded-full bg-red-400">
+                  <img src={student.img} alt="" width="56" height="56" />
+                </div>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                >
+                  <rect width="48" height="48" rx="24" fill="#C1BBEB" />
+                </svg>
+              )}
 
               <div className="flex flex-col">
                 <h4 className="text-base font-semibold text-[#303972]">

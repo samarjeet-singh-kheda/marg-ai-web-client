@@ -131,7 +131,7 @@ const SchoolCalendar = () => {
 
   return (
     <div
-      className="rounded-lg border bg-card p-4 text-card-foreground shadow-sm md:p-6"
+      className="rounded-3xl border bg-card p-4 text-card-foreground shadow-sm md:p-6"
       role="region"
       aria-label="School Calendar"
     >

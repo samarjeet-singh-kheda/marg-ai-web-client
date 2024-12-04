@@ -32,11 +32,10 @@ const ClassPerformanceChart = ({ data }) => {
     (item) => item.month === selectedMonth.substring(0, 3),
   );
 
-  const CustomTooltip = ({ active, payload, label }) => {
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-lg">
-          <p className="mb-2 font-semibold text-gray-700">{label}</p>
           {payload.map((entry, index) => (
             <div key={index} className="flex items-center gap-2">
               <div
@@ -65,7 +64,7 @@ const ClassPerformanceChart = ({ data }) => {
   ];
 
   return (
-    <div className="w-full rounded-2xl bg-white p-6 pb-2 shadow-sm">
+    <div className="w-full rounded-3xl border bg-card p-6 pb-2 shadow-sm">
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-xl font-semibold text-[#2E3A59]">
           Class Performance

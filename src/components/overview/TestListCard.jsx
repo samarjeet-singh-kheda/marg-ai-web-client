@@ -5,22 +5,22 @@ function TestListCard({ tests }) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const handleViewMore = () => {
-    setVisibleCount((prevCount) => prevCount + 3);
+    setVisibleCount((prevCount) => (prevCount <= 3 ? 5 : 3));
   };
 
   return (
-    <div className="w-full rounded-3xl bg-white p-6 shadow-sm">
+    <div className="w-full rounded-3xl border bg-card p-6 shadow-sm">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-xl font-semibold text-[#333]">Tests</h2>
         <button
           className="text-sm font-bold text-[#4D44B5] hover:text-[#4D44B5]/80"
           onClick={handleViewMore}
         >
-          See All
+          {visibleCount <= 3 ? "See All" : "See Less"}
         </button>
       </div>
 
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-4">
         {tests.slice(0, visibleCount).map((test) => (
           <TestItem test={test} key={test.id} />
         ))}
@@ -31,7 +31,7 @@ function TestListCard({ tests }) {
 
 function TestItem({ test }) {
   return (
-    <li key={test.id} className="flex items-center gap-4">
+    <li className="flex items-center gap-3 rounded-3xl bg-white/50 p-3 shadow-sm transition-all hover:bg-white hover:shadow-md">
       <div className="h-12 w-12 rounded-xl bg-[#F0F7FF] p-2 text-center text-xl font-semibold text-[#4D44B5]">
         {test.class}
       </div>
