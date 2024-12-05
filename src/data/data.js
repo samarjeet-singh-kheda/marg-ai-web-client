@@ -306,3 +306,123 @@ export const upcomingActivities = [
     endTime: "2:30 PM",
   },
 ];
+
+export const options = {
+  class: ["Class 1-A", "Class 1-B", "Class 2-A", "Class 2-B"],
+  assessment: ["Mid Term", "Final Term", "Quiz 1", "Quiz 2"],
+  student: [
+    "John Doe",
+    "Samarjeet Singh",
+    "Ansh Dube",
+    "Ishika Garg",
+    "Himanshi Maheshwari",
+  ],
+};
+
+export const topPerformingStudents = [
+  { name: "John Doe", percentage: 98.5 },
+  { name: "Samarjeet Singh", percentage: 97.8 },
+  { name: "Ansh Dube", percentage: 96.4 },
+  { name: "Ishika Garg", percentage: 95.9 },
+  { name: "Himanshi Maheshwari", percentage: 95.2 },
+  { name: "Lisa Anderson", percentage: 94.8 },
+  { name: "David Taylor", percentage: 94.3 },
+  { name: "Amy Martinez", percentage: 93.7 },
+  { name: "Robert Johnson", percentage: 93.1 },
+  { name: "Emily White", percentage: 92.5 },
+];
+
+export const performanceData = {
+  class: {
+    "Class 1-A": [
+      { assignment: "Assignment 1", average: 85 },
+      { assignment: "Assignment 2", average: 78 },
+      { assignment: "Assignment 3", average: 92 },
+      { assignment: "Assignment 4", average: 88 },
+      { assignment: "Assignment 5", average: 82 },
+    ],
+    "Class 1-B": [
+      { assignment: "Assignment 1", average: 82 },
+      { assignment: "Assignment 2", average: 75 },
+      { assignment: "Assignment 3", average: 88 },
+      { assignment: "Assignment 4", average: 90 },
+      { assignment: "Assignment 5", average: 85 },
+    ],
+    "Class 2-A": [
+      { assignment: "Assignment 1", average: 82 },
+      { assignment: "Assignment 2", average: 60 },
+      { assignment: "Assignment 3", average: 88 },
+      { assignment: "Assignment 4", average: 40 },
+      { assignment: "Assignment 5", average: 85 },
+    ],
+    "Class 2-B": [
+      { assignment: "Assignment 1", average: 82 },
+      { assignment: "Assignment 2", average: 30 },
+      { assignment: "Assignment 3", average: 88 },
+      { assignment: "Assignment 4", average: 26 },
+      { assignment: "Assignment 5", average: 100 },
+    ],
+  },
+  assessment: {
+    "Mid Term": [
+      { question: "Q1", correctAnswers: 45 },
+      { question: "Q2", correctAnswers: 38 },
+      { question: "Q3", correctAnswers: 42 },
+      { question: "Q4", correctAnswers: 30 },
+      { question: "Q5", correctAnswers: 35 },
+    ],
+    "Final Term": [
+      { question: "Q1", correctAnswers: 40 },
+      { question: "Q2", correctAnswers: 42 },
+      { question: "Q3", correctAnswers: 38 },
+      { question: "Q4", correctAnswers: 36 },
+      { question: "Q5", correctAnswers: 39 },
+    ],
+    "Quiz 1": [
+      { question: "Q1", correctAnswers: 39 },
+      { question: "Q2", correctAnswers: 41 },
+      { question: "Q3", correctAnswers: 50 },
+      { question: "Q4", correctAnswers: 36 },
+      { question: "Q5", correctAnswers: 17 },
+    ],
+    "Quiz 2": [
+      { question: "Q1", correctAnswers: 40 },
+      { question: "Q2", correctAnswers: 42 },
+      { question: "Q3", correctAnswers: 38 },
+      { question: "Q4", correctAnswers: 36 },
+      { question: "Q5", correctAnswers: 39 },
+    ],
+  },
+  student: {
+    "John Doe": [
+      { assessment: "Mid Term", average: 88 },
+      { assessment: "Quiz 1", average: 92 },
+      { assessment: "Quiz 2", average: 85 },
+      { assessment: "Final Term", average: 90 },
+    ],
+    "Samarjeet Singh": [
+      { assessment: "Mid Term", average: 92 },
+      { assessment: "Quiz 1", average: 88 },
+      { assessment: "Quiz 2", average: 90 },
+      { assessment: "Final Term", average: 94 },
+    ],
+    "Ansh Dube": [
+      { assessment: "Mid Term", average: 92 },
+      { assessment: "Quiz 1", average: 88 },
+      { assessment: "Quiz 2", average: 90 },
+      { assessment: "Final Term", average: 94 },
+    ],
+    "Ishika Garg": [
+      { assessment: "Mid Term", average: 92 },
+      { assessment: "Quiz 1", average: 88 },
+      { assessment: "Quiz 2", average: 90 },
+      { assessment: "Final Term", average: 94 },
+    ],
+    "Himanshi Maheshwari": [
+      { assessment: "Mid Term", average: 28 },
+      { assessment: "Quiz 1", average: 12 },
+      { assessment: "Quiz 2", average: 90 },
+      { assessment: "Final Term", average: 26 },
+    ],
+  },
+};
