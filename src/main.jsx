@@ -1,61 +1,120 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SignIn from "./pages/sign-in";
-import SignUp from "./pages/sign-up";
-import HomePage from "./pages/overview-page";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import "./utils/i18n";
-import UserPage from "./pages/user-profile-page";
-import AssessmentsPage from "./pages/assessments-list-page";
-import EventsPage from "./pages/events-page";
-import ResourcesPage from "./pages/resources-page";
-import StudentsPage from "./pages/students-page";
-import ResultsAnalyticsPage from "./pages/result-analytics-page";
-import CreateAssessmentPage from "./pages/create-assessment-page";
-import NotFoundPage from "./pages/not-found-page";
+
+import LandingPage from "./pages/LandingPage";
+import SignInPage from "./pages/SignInPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+import TeacherOverviewPage from "./pages/teacher/overview-page";
+import TeacherAssessmentsPage from "./pages/teacher/assessments-list-page";
+import TeacherSchedulePage from "./pages/teacher/schedule-page";
+import TeacherResourcesPage from "./pages/teacher/resources-page";
+import TeacherStudentsPage from "./pages/teacher/students-page";
+import TeacherResultsAnalyticsPage from "./pages/teacher/result-analytics-page";
+import TeacherUserPage from "./pages/teacher/user-profile-page";
+
+import AdminOverviewPage from "./pages/admin/overview-page";
+import AdminStudentsPage from "./pages/admin/students-page";
+import AdminTeachersPage from "./pages/admin/teachers-page";
+import AdminExamAdminsPage from "./pages/admin/exam-admins-page";
+import AdminAssessmentsPage from "./pages/admin/assessments-page";
+import AdminExamSchedulePage from "./pages/admin/exam-schedule-page";
+import AdminInstitutionPage from "./pages/admin/institution-page";
+import AddVivaPage from "./pages/teacher/add-viva-page";
+import AddMCQPage from "./pages/teacher/add-mcq-page";
+import AddDescriptivePage from "./pages/teacher/add-descriptive-page";
+import GenerateQuestionsPage from "./pages/teacher/generate-questions-page";
+import OverviewPage from "./pages/exam-admin/overview-page";
+import ExamAdminAssessmentsPage from "./pages/exam-admin/assessments";
 
 const router = createBrowserRouter([
+  
   {
     path: "/",
-    element: <HomePage />,
-    errorElement: <NotFoundPage />,
+    element: <SignInPage />,
   },
   {
-    path: "/assessments/create",
-    element: <CreateAssessmentPage />,
+    path: "/teacher",
+    element: <TeacherOverviewPage />,
   },
   {
-    path: "/assessments",
-    element: <AssessmentsPage />,
+    path: "/teacher/assessments",
+    element: <TeacherAssessmentsPage />,
   },
   {
-    path: "/events",
-    element: <EventsPage />,
+    path: "/teacher/assessments/add-viva",
+    element: <AddVivaPage />,
   },
   {
-    path: "/resources",
-    element: <ResourcesPage />,
+    path: "/teacher/assessments/add-mcq",
+    element: <AddMCQPage />,
   },
   {
-    path: "/students",
-    element: <StudentsPage />,
+    path: "/teacher/assessments/add-descriptive",
+    element: <AddDescriptivePage />,
   },
   {
-    path: "/result-analytics",
-    element: <ResultsAnalyticsPage />,
+    path: "/teacher/schedule",
+    element: <TeacherSchedulePage />,
   },
   {
-    path: "/user",
-    element: <UserPage />,
+    path: "/teacher/resources",
+    element: <TeacherResourcesPage />,
   },
   {
-    path: "/sign-in",
-    element: <SignIn />,
+    path: "/teacher/students",
+    element: <TeacherStudentsPage />,
   },
   {
-    path: "/sign-up",
-    element: <SignUp />,
+    path: "/teacher/result-analytics",
+    element: <TeacherResultsAnalyticsPage />,
+  },
+  {
+    path: "/teacher/user",
+    element: <TeacherUserPage />,
+  },
+  {
+    path: "/teacher/generate-questions",
+    element: <GenerateQuestionsPage />,
+  },
+  {
+    path: "/admin",
+    element: <AdminOverviewPage />,
+  },
+  {
+    path: "/admin/students",
+    element: <AdminStudentsPage />,
+  },
+  {
+    path: "/admin/teachers",
+    element: <AdminTeachersPage />,
+  },
+  {
+    path: "/admin/exam-admins",
+    element: <AdminExamAdminsPage />,
+  },
+  {
+    path: "/admin/assessments",
+    element: <AdminAssessmentsPage />,
+  },
+  {
+    path: "/admin/exam-schedule",
+    element: <AdminExamSchedulePage />,
+  },
+  {
+    path: "/admin/institution",
+    element: <AdminInstitutionPage />,
+  },
+  {
+    path: "/exam-admin",
+    element: <OverviewPage />,
+  },
+  {
+    path: "/exam-admin/assessments",
+    element: <ExamAdminAssessmentsPage />,
   },
 ]);
 
@@ -64,5 +123,5 @@ createRoot(document.getElementById("root")).render(
     <Suspense fallback={<div>Loading...</div>}>
       <RouterProvider router={router} />
     </Suspense>
-  </StrictMode>,
+  </StrictMode>
 );

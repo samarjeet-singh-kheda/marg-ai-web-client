@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -6,12 +7,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ChevronDown } from "lucide-react";
 
 const YEARS = Array.from(
   { length: 9 },
-  (_, i) => new Date().getFullYear() - 3 + i,
+  (_, i) => new Date().getFullYear() - 3 + i
 );
 
 const MONTHS = [
@@ -32,50 +32,32 @@ const MONTHS = [
 const EVENT_TYPES = {
   TEST: {
     name: "Test",
-    color: "bg-[#FB7D5B]/20 hover:bg-[#FB7D5B]/30",
+    color: "bg-[#FB7D5B]  rounded-full px-4 py-3 text-white",
     dotColor: "bg-[#FB7D5B]",
     textColor: "text-[#FB7D5B]",
   },
   ASSIGNMENT: {
     name: "Assignment",
-    color: "bg-[#FCC43E]/20 hover:bg-[#FCC43E]/30",
+    color: "bg-[#FCC43E]  rounded-full px-4 py-3 text-white",
     dotColor: "bg-[#FCC43E]",
     textColor: "text-[#FCC43E]",
   },
 };
 
-const SchoolCalendar = () => {
+const SchoolCalendar = ({ events, headingClass }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [events, setEvents] = useState({});
-  const [selectedDay, setSelectedDay] = useState(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const daysInMonth = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth() + 1,
-    0,
+    0
   ).getDate();
 
   const firstDayOfMonth = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth(),
-    1,
+    1
   ).getDay();
-
-  const handleDateClick = (day) => {
-    setSelectedDay(day);
-    setIsDialogOpen(true);
-  };
-
-  const handleEventSelect = (eventType) => {
-    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${selectedDay}`;
-    setEvents((prev) => ({
-      ...prev,
-      [dateKey]: eventType,
-    }));
-    setIsDialogOpen(false);
-    setSelectedDay(null);
-  };
 
   const getEventForDate = (day) => {
     const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`;
@@ -86,13 +68,13 @@ const SchoolCalendar = () => {
     const days = [];
     for (let i = 1; i <= daysInMonth; i++) {
       const event = getEventForDate(i);
-      const eventClass = event ? EVENT_TYPES[event].color : "hover:bg-muted";
+      const eventClass = event ? EVENT_TYPES[event].color : "hover:bg-white/80";
 
       // Calculate if it's a Sunday
       const date = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth(),
-        i,
+        i
       );
       const isSunday = date.getDay() === 0;
 
@@ -100,30 +82,21 @@ const SchoolCalendar = () => {
         <Button
           key={i}
           variant="ghost"
-          onClick={() => handleDateClick(i)}
-          className={cn("relative aspect-square h-full w-full p-0", eventClass)}
+          className="relative aspect-square h-full w-full p-0 border-2 rounded-none"
           aria-label={`${i} ${currentDate.toLocaleString("default", {
             month: "long",
           })} ${currentDate.getFullYear()}`}
         >
           <span
             className={cn(
-              "absolute left-1 top-1 text-sm",
-              isSunday && "font-medium text-destructive",
+              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-lg",
+              isSunday && "font-medium text-[#FB7D5B]",
+              event && eventClass
             )}
           >
             {i}
           </span>
-          {event && (
-            <span
-              className={cn(
-                "absolute bottom-1 right-1 h-2 w-2 rounded-full",
-                EVENT_TYPES[event].dotColor,
-              )}
-              aria-label={EVENT_TYPES[event].name}
-            />
-          )}
-        </Button>,
+        </Button>
       );
     }
     return days;
@@ -131,12 +104,14 @@ const SchoolCalendar = () => {
 
   return (
     <div
-      className="rounded-3xl border bg-card p-4 text-card-foreground shadow-sm md:p-6"
+      className="rounded-3xl border bg-white p-4 shadow-md md:p-6"
       role="region"
       aria-label="School Calendar"
     >
       <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-        <h2 className="text-2xl font-bold text-[#303972]">School Calendar</h2>
+        <h2 className={`text-2xl font-bold ${headingClass}`}>
+          School Calendar
+        </h2>
 
         <Popover>
           <PopoverTrigger asChild>
@@ -149,8 +124,8 @@ const SchoolCalendar = () => {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-64 p-2" align="end">
-            <div className="mb-2 font-medium">Month</div>
-            <div className="grid grid-cols-3 gap-1">
+            <div className="mb-2 font-medium text-center">Month</div>
+            <div className="grid grid-cols-3">
               {MONTHS.map((month, index) => (
                 <Button
                   key={month}
@@ -158,19 +133,19 @@ const SchoolCalendar = () => {
                   size="sm"
                   onClick={() =>
                     setCurrentDate(
-                      new Date(currentDate.getFullYear(), index, 1),
+                      new Date(currentDate.getFullYear(), index, 1)
                     )
                   }
                   className={cn(
-                    "justify-center",
-                    currentDate.getMonth() === index && "bg-muted",
+                    "justify-center transition-all duration-300 ease-in-out transform ",
+                    currentDate.getMonth() === index && "bg-muted"
                   )}
                 >
                   {month.slice(0, 3)}
                 </Button>
               ))}
             </div>
-            <div className="mb-2 mt-4 font-medium">Year</div>
+            <div className="mb-2 mt-4 font-medium text-center">Year</div>
             <div className="grid grid-cols-3 gap-1">
               {YEARS.map((year) => (
                 <Button
@@ -181,8 +156,8 @@ const SchoolCalendar = () => {
                     setCurrentDate(new Date(year, currentDate.getMonth(), 1))
                   }
                   className={cn(
-                    "justify-center",
-                    currentDate.getFullYear() === year && "bg-muted",
+                    "justify-center transition-all duration-300 ease-in-out transform ",
+                    currentDate.getFullYear() === year && "bg-muted"
                   )}
                 >
                   {year}
@@ -193,36 +168,14 @@ const SchoolCalendar = () => {
         </Popover>
       </div>
 
-      {/* Add Dialog */}
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent>
-          <DialogTitle>
-            Select Event Type for {selectedDay}{" "}
-            {currentDate.toLocaleString("default", { month: "long" })}
-          </DialogTitle>
-          <div className="flex flex-col gap-2">
-            {Object.entries(EVENT_TYPES).map(([type, { name, color }]) => (
-              <Button
-                key={type}
-                variant="ghost"
-                onClick={() => handleEventSelect(type)}
-                className={cn("justify-start", color)}
-              >
-                {name}
-              </Button>
-            ))}
-          </div>
-        </DialogContent>
-      </Dialog>
-
       {/* Calendar Grid */}
-      <div className="mb-2 grid grid-cols-7 gap-1">
+      <div className="mb-4 grid grid-cols-7 gap-1">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day, index) => (
           <div
             key={day}
             className={cn(
-              "text-center text-sm font-medium text-muted-foreground",
-              index === 0 && "text-destructive",
+              "text-center text-sm font-medium text-muted-foreground text-[#A098AE]",
+              index === 0 && "text-[#FB7D5B]"
             )}
           >
             {day}
@@ -231,10 +184,10 @@ const SchoolCalendar = () => {
       </div>
 
       <div
-        className="grid grid-cols-7 gap-1"
+        className="grid grid-cols-7 "
         style={{
           gridTemplateRows: `repeat(${Math.ceil(
-            (daysInMonth + firstDayOfMonth) / 7,
+            (daysInMonth + firstDayOfMonth) / 7
           )}, auto)`,
         }}
       >
